@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chennai Smart Transport Map</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:'Inter',sans-serif;
+  background:linear-gradient(to bottom,#a2d9ff 0%,#e8f9ff 60%,#ffffff 100%);
+  display:flex;flex-direction:column;align-items:center;padding:25px 20px;min-height:100vh
+}
+header{
+  display:flex;align-items:center;justify-content:space-between;
+  width:100%;max-width:1200px;margin-bottom:25px
+}
+.brand{display:flex;align-items:center;gap:15px}
+.logo{
+  width:56px;height:56px;border-radius:12px;
+  display:grid;place-items:center;
+  background:linear-gradient(120deg,#ff6b35,#ffb86b);
+  color:#fff;font-weight:800;font-size:20px;
+  box-shadow:0 8px 25px rgba(0,0,0,0.15)
+}
+.title h1{font-size:22px;font-weight:700}
+.title p{font-size:13px;color:#64748b}
+
+/* Scene container */
+.panel-scene{
+  width:100%;max-width:1200px;
+  background:rgba(255,255,255,0.95);
+  border-radius:20px;box-shadow:0 15px 40px rgba(0,0,0,0.12);
+  padding:18px;overflow:hidden;position:relative
+}
+
+/* Sky & clouds */
+.skyline{
+  position:relative;width:100%;height:130px;
+  background:linear-gradient(to bottom,#bde5ff,#dff7ff);
+  border-radius:16px;overflow:hidden
+}
+.cloud{
+  position:absolute;background:#fff;border-radius:50%;
+  box-shadow:30px 20px 0 0 #fff,60px 20px 0 0 #fff;
+  opacity:0.9;animation:moveClouds 50s linear infinite
+}
+.cloud:nth-child(1){top:20px;left:-80px;width:60px;height:30px}
+.cloud:nth-child(2){top:50px;left:-150px;width:80px;height:35px;animation-delay:10s}
+@keyframes moveClouds{0%{left:-200px}100%{left:110%}}
+.sun{
+  position:absolute;top:20px;right:40px;width:50px;height:50px;
+  background:radial-gradient(circle at center,#ffeb3b,#f59e0b);
+  border-radius:50%;box-shadow:0 0 40px rgba(255,230,50,0.6)
+}
+
+/* Buildings */
+.buildings{
+  position:absolute;bottom:0;left:50%;transform:translateX(-50%);
+  display:flex;gap:8px;align-items:flex-end
+}
+.building{
+  background:linear-gradient(180deg,#334155,#475569);
+  border-radius:4px 4px 0 0;box-shadow:0 4px 10px rgba(0,0,0,0.2)
+}
+.building:nth-child(1){width:40px;height:60px}
+.building:nth-child(2){width:50px;height:90px}
+.building:nth-child(3){width:35px;height:50px}
+.building:nth-child(4){width:55px;height:100px}
+.building:nth-child(5){width:45px;height:70px}
+
+/* Roads / Lanes */
+.lanes{
+  position:relative;margin-top:20px;height:220px;
+  border-radius:12px;background:#f1f5f9;overflow:hidden
+}
+
+/* Bus road */
+.lane-bus{
+  position:absolute;top:20px;width:100%;height:40px;
+  background:repeating-linear-gradient(0deg,#374151,#374151 38px,#1e293b 38px,#1e293b 40px);
+  border-radius:6px
+}
+.lane-bus::after{
+  content:'';position:absolute;top:50%;width:100%;height:3px;
+  background:repeating-linear-gradient(90deg,#facc15 0 30px,transparent 30px 60px);
+  transform:translateY(-50%)
+}
+
+/* Metro track */
+.lane-metro{
+  position:absolute;top:85px;width:100%;height:35px;
+  background:#64748b;border-radius:4px;
+  box-shadow:inset 0 4px 0 #94a3b8,inset 0 -4px 0 #475569
+}
+.lane-metro::after{
+  content:'';position:absolute;top:8px;width:100%;height:4px;
+  background:repeating-linear-gradient(90deg,#dbeafe 0 3px,#94a3b8 3px 6px)
+}
+
+/* Train track */
+.lane-train{
+  position:absolute;bottom:20px;width:100%;height:40px;
+  background:#57534e;border-radius:4px;
+  box-shadow:inset 0 5px #78716c,inset 0 -5px #44403c
+}
+.lane-train::before{
+  content:'';position:absolute;width:100%;height:6px;top:7px;
+  background:repeating-linear-gradient(90deg,#d6d3d1 0 3px,#44403c 3px 6px)
+}
+.lane-train::after{
+  content:'';position:absolute;width:100%;height:6px;bottom:7px;
+  background:repeating-linear-gradient(90deg,#d6d3d1 0 3px,#44403c 3px 6px)
+}
+
+/* Vehicles with images */
+.vehicle{
+  position:absolute;animation:moveVehicle 14s linear infinite;
+}
+.vehicle img{
+  height:50px; /* Adjust image size here */
+  width:auto;
+  filter:drop-shadow(0 5px 10px rgba(0,0,0,0.3));
+}
+.vehicle-bus{top:20px}
+.vehicle-metro{top:85px;animation-delay:4s}
+.vehicle-train{bottom:20px;animation-delay:8s}
+
+@keyframes moveVehicle{
+  0%{left:-150px;transform:scale(1)}
+  50%{transform:scale(1.05)}
+  100%{left:calc(100% + 150px);transform:scale(1)}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <div class="logo">C1</div>
+    <div class="title">
+      <h1>Chennai One</h1>
+      <p>Smart Transport Map</p>
+    </div>
+  </div>
+</header>
+
+<div class="panel-scene">
+  <div class="skyline">
+    <div class="sun"></div>
+    <div class="cloud"></div>
+    <div class="cloud"></div>
+    <div class="buildings">
+      <div class="building"></div>
+      <div class="building"></div>
+      <div class="building"></div>
+      <div class="building"></div>
+      <div class="building"></div>
+    </div>
+  </div>
+
+  <div class="lanes">
+    <div class="lane-bus"></div>
+    <div class="vehicle vehicle-bus">
+      <img src="./images/bus.png" alt="Bus">
+    </div>
+
+    <div class="lane-metro"></div>
+    <div class="vehicle vehicle-metro">
+      <img src="./images/metro.png" alt="Metro">
+    </div>
+
+    <div class="lane-train"></div>
+    <div class="vehicle vehicle-train">
+      <img src="./images/train.png" alt="Train">
+    </div>
+  </div>
+</div>
+</body>
+</html>

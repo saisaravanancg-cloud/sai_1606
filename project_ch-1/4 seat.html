@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Seat Selection — Chennai One</title>
+    <link rel="stylesheet" href="css/style.css"></head>
+<body>
+  <div class="container">
+    <header class="header"><div class="brand">CHENNAIONE</div>
+        <nav class="nav"><a class="clip-btn" href="3 list.html">Back</a>
+            <a class="clip-btn" href="1 home page.html">Home</a></nav></header>
+
+    <section class="card grid-2">
+      <div class="left">
+        <h3 class="section-title">Seat Selection</h3>
+        <div class="seat-map">
+          <div class="row">
+            <label class="seat available"><input type="checkbox" name="s1"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="18" rx="3"/></svg></label>
+            <label class="seat available"><input type="checkbox" name="s2"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="18" rx="3"/></svg></label>
+            <div class="seat booked"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="18" rx="3"/></svg></div>
+            <label class="seat available"><input type="checkbox" name="s3"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="18" rx="3"/></svg></label>
+          </div>
+
+          <div class="row">
+            <div class="seat booked"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="18" rx="3"/></svg></div>
+            <label class="seat available"><input type="checkbox" name="s4"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="18" rx="3"/></svg></label>
+            <label class="seat available"><input type="checkbox" name="s5"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="18" rx="3"/></svg></label>
+            <div class="seat booked"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="18" rx="3"/></svg></div>
+          </div>
+        </div>
+
+        <div style="margin-top:12px">
+          <div class="field">
+            <label>Passengers</label>
+            <input class="input" type="number" min="1" value="1">
+          </div>
+          <div class="field">
+            <label>Date</label>
+            <input class="input" type="date" value="">
+          </div>
+          <div style="margin-top:10px">
+            <a class="clip-btn" href="5 pay.html">Proceed to Payment</a>
+            <a class="clip-btn alt" href="3 list.html" style="margin-left:8px">Change Transport</a>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h3 style="color:var(--brand)">Selection Summary</h3>
+        <div class="summary">
+          <p>Transport <span>Bus 113</span></p>
+          <p>Route <span>Central → guindy</span></p>
+          <p>Seats <span>21 (example)</span></p>
+          <p>Date <span>08/11/2025</span></p>
+          <p style="font-weight:800">Total <span>₹25</span></p>
+        </div>
+
+        <div style="margin-top:14px">
+          <!-- <p class="note">Click an available seat to highlight it (visual). In a real app seats update on the server.</p> -->
+          <img src="./all image.jpg" alt="" style="width:50%;border-radius:10px;margin-top:10px">
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">© Chennai One</footer>
+  </div>
+</body>
+</html>

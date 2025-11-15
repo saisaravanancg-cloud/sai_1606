@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Payment — Chennai One</title>
+<style>
+:root {
+  --brand: #ff5722;
+  --light: #fff6f1;
+  --bg: #fafafa;
+}
+body {
+  background: var(--bg);
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+}
+.container {
+  max-width: 480px;
+  margin: 40px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 8px;
+}
+.brand {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--brand);
+}
+.nav a {
+  margin-left: 8px;
+}
+.card {
+  margin-top: 20px;
+  background: var(--light);
+  padding: 16px;
+  border-radius: 14px;
+  box-shadow: inset 0 0 4px rgba(0,0,0,0.05);
+}
+.summary p {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0;
+}
+.payment-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+.pay {
+  background: #fff;
+  border: 2px solid var(--brand);
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+  text-align: center;
+  transition: 0.3s;
+}
+.pay:hover {
+  background: var(--brand);
+  color: white;
+}
+.clip-btn {
+  display: inline-block;
+  padding: 10px 24px;
+  background: linear-gradient(90deg, #ff5722, #ff9800);
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
+  transition: 0.3s ease;
+}
+.clip-btn:hover {
+  transform: scale(1.05);
+}
+.footer {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 13px;
+  color: #888;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+  <header class="header">
+    <div class="brand">CHENNAIONE</div>
+    <nav class="nav">
+      <a class="clip-btn" href="4 seat.html">Back</a>
+      <a class="clip-btn" href="1 home page.html">Home</a>
+    </nav>
+  </header>
+
+  <section class="card">
+    <h2 style="color:var(--brand)">Order Summary</h2>
+    <div class="summary">
+      <p>Transport <span>Bus No 113</span></p>
+      <p>Route <span>Central → Guindy</span></p>
+      <p>Seat(s) <span>21</span></p>
+      <p>Date <span>08/11/2025</span></p>
+      <p style="font-weight:800">Total <span>₹25</span></p>
+    </div>
+
+    <h3 style="margin-top:12px">Choose Payment</h3>
+    <div class="payment-methods">
+      <div class="pay">GPay</div>
+      <div class="pay">ATM / Debit / Credit</div>
+    </div>
+
+    <div style="margin-top:14px;text-align:center">
+      
+      <a href="8 ticket.html" class="clip-btn">Pay & Confirm →</a>
+      <a class="clip-btn" href="4 seat.html" style="margin-left:8px">Change Seats</a>
+    </div>
+  </section>
+
+  <footer class="footer">© Chennai One</footer>
+</div>
+</body>
+</html>

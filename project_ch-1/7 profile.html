@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Profile — Chennai One</title>
+
+<style>
+:root {
+  --brand: #ff5722;
+  --light: #fff6f1;
+  --bg: #fafafa;
+}
+
+body {
+  background: var(--bg);
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+}
+
+/* Container */
+.container {
+  max-width: 480px;
+  margin: 40px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 8px;
+}
+.brand {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--brand);
+}
+.nav a {
+  margin-left: 8px;
+}
+
+/* Buttons */
+.clip-btn {
+  display: inline-block;
+  padding: 10px 24px;
+  background: linear-gradient(90deg, #ff5722, #ff9800);
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 15px;
+  clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
+  transition: 0.3s ease;
+}
+.clip-btn:hover {
+  transform: scale(1.05);
+}
+.clip-btn.alt {
+  background: #ccc;
+  color: black;
+}
+
+/* Profile details */
+.profile-form label {
+  display: block;
+  margin: 10px 0;
+  font-weight: 600;
+}
+.small {
+  color: #555;
+  margin-top: 3px;
+  font-size: 14px;
+}
+
+/* Card look */
+.card {
+  margin-top: 20px;
+  background: var(--light);
+  padding: 16px;
+  border-radius: 14px;
+  box-shadow: inset 0 0 4px rgba(0,0,0,0.05);
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 13px;
+  color: #888;
+}
+
+/* Page transitions */
+section {
+  display: none;
+  text-align: center;
+  animation: fadeIn 0.6s ease forwards;
+}
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(30px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+#profile, #cancel-form, #cancel-ticket {
+  display: none;
+}
+:target {
+  display: block;
+}
+
+
+.input-box {
+  margin: 10px auto;
+  text-align: left;
+}
+.input-box label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+.input-box input {
+  width: 95%;
+  padding: 8px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  outline: none;
+}
+.input-box input:focus {
+  border-color: var(--brand);
+}
+
+/* Cancell Tic Design */
+.ticket-card {
+  background: #fff6f1;
+  border: 2px dashed #ff9800;
+  border-radius: 12px;
+  padding: 16px;
+  margin: 20px auto;
+  width: 90%;
+  text-align: left;
+  position: relative;
+}
+.ticket-card::before, .ticket-card::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 20px;
+  height: 20px;
+  background: var(--bg);
+  border-radius: 50%;
+  transform: translateY(-50%);
+}
+.ticket-card::before { left: -10px; }
+.ticket-card::after { right: -10px; }
+
+.cancelled {
+  text-align: center;
+  color: red;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 10px;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+  <header class="header">
+    <div class="brand">CHENNAIONE</div>
+    <nav class="nav">
+      <a class="clip-btn" href="1 home page.html">Home</a>
+      <a class="clip-btn" href="2 choose transport.html">Book</a>
+    </nav>
+  </header>
+
+  
+  <section id="profile" style="display:block">
+    <h2 style="color:var(--brand)">My Profile</h2>
+    <div class="profile-form">
+      <label>Name<div class="small">Saravanan C</div></label>
+      <label>Email<div class="small">sai cg@gmail.com</div></label>
+      <label>Phone<div class="small">+91 739736xxxx</div></label>
+      <label>Address<div class="small">Madurai, Tamil Nadu</div></label>
+
+      <div style="margin-top:10px">
+        <a class="clip-btn">Edit Profile (demo)</a>
+        <a class="clip-btn alt" style="margin-left:8px">Logout</a>
+      </div>
+    </div>
+
+    <div style="margin-top:14px">
+      <h3>Tickets</h3>
+      <p>Choose an action:</p>
+      <div style="margin-top:8px">
+        <a class="clip-btn" href="9 form.html">Cancel Ticket</a>
+      </div>
+    </div>
+  </section>
+
+  
+  <section id="cancel-form">
+    <h2 style="color:var(--brand)">Cancel Ticket</h2>
+    <div class="input-box">
+      <label>Phone Number</label>
+      <input type="text" placeholder="+91 **********">
+    </div>
+    <div class="input-box">
+      <label>PNR Number</label>
+      <input type="text" placeholder="Enter PNR">
+    </div>
+    <a class="clip-btn" href="10 cancell.html">Confirm Cancel →</a>
+    <a class="clip-btn alt" href="7 profile.html" style="margin-left:8px">Back</a>
+  </section>
+
+  
+  <section id="cancel-ticket">
+    <h2 style="color:var(--brand)">Ticket Cancelled</h2>
+    <div class="ticket-card">
+      <p><strong>Bus No:</strong> 113</p>
+      <p><strong>Route:</strong> Central → Guindy</p>
+      <p><strong>Seat:</strong> 21</p>
+      <p><strong>Date:</strong> 28/10/2025</p>
+      <p><strong>Fare:</strong> ₹25</p>
+      <p><strong>PNR:</strong> ABC12345</p>
+      <p class="cancelled">❌ Ticket Cancelled Successfully</p>
+    </div>
+    <a class="clip-btn" href="7 profile.html">🏠 Back to Profile</a>
+  </section>
+
+  <footer class="footer">© Chennai One</footer>
+</div>
+</body>
+</html>

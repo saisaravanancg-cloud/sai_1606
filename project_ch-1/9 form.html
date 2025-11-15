@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Cancel Ticket — Chennai One</title>
+<style>
+:root {
+  --brand: #ff5722;
+  --bg: #fff6f1;
+}
+body {
+  background: var(--bg);
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  max-width: 480px;
+  margin: 40px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+h2 {
+  color: var(--brand);
+  margin-bottom: 8px;
+}
+.input-box {
+  text-align: left;
+  margin: 15px auto;
+  width: 90%;
+}
+.input-box label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+.input-box input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 2px solid #ddd;
+  outline: none;
+}
+.input-box input:focus {
+  border-color: var(--brand);
+}
+.clip-btn {
+  display: inline-block;
+  padding: 10px 24px;
+  background: linear-gradient(90deg, #ff5722, #ff9800);
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
+  transition: 0.3s ease;
+}
+.clip-btn:hover {
+  transform: scale(1.05);
+}
+.clip-btn.gray {
+  background: #ccc;
+  color: #000;
+}
+.footer {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 13px;
+  color: #888;
+}
+.ticket-card {
+  background: #fff6f1;
+  border: 2px dashed #ff9800;
+  border-radius: 12px;
+  padding: 16px;
+  margin: 20px auto;
+  width: 90%;
+  text-align: left;
+}
+.cancelled {
+  text-align: center;
+  color: red;
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 10px;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+  <h2>Cancel Ticket</h2>
+  <p>Please enter your details to cancel your booking.</p>
+
+  <div class="input-box">
+    <label>Phone Number</label>
+    <input type="text" placeholder="+91 **********">
+  </div>
+
+  <div class="input-box">
+    <label>PNR Number</label>
+    <input type="text" placeholder="Enter PNR">
+  </div>
+
+  <div style="margin-top:15px;">
+    <a href="10 cancell.html" class="clip-btn">Confirm Cancel →</a>
+    <a href="ticket-confirmed.html" class="clip-btn gray" style="margin-left:8px;">Back</a>
+  </div>
+
+  <footer class="footer">© Chennai One</footer>
+</div>
+</body>
+</html>
